@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS byteblogger-mvc;
+DROP DATABASE IF EXISTS byteblogger_mvc_db;
 
-CREATE DATABASE byteblogger-mvc;
+CREATE DATABASE byteblogger_mvc_db;
