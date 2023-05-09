@@ -1,16 +1,16 @@
-import path from 'path';
-import express from 'express';
-import routes from './controllers/index.js';
-import sequelize from './config/connection.js';
-import helpers from './utils/helpers.js';
-import exphbs from 'express-handlebars';
-import session from 'express-session';
-import SequelizeStore from 'connect-session-sequelize';
+const path = require('path');
+const express = require('express');
+const routes = require('./controllers/index.js');
+const sequelize = require('./config/connection.js');
+const helpers = require('./utils/helpers.js');
+const exphbs = require('express-handlebars');
+const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(express.static(path.join(import.meta.url, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -18,8 +18,6 @@ const hbs = exphbs.create({ helpers });
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
-const SequelizeSessionStore = SequelizeStore(session.Store);
 
 const sess = {
   secret: 'Super secret secret',
@@ -29,7 +27,7 @@ const sess = {
   rolling: true,
   resave: true,
   saveUninitialized: true,
-  store: new SequelizeSessionStore({
+  store: new SequelizeStore({
     db: sequelize
   }),
 };
