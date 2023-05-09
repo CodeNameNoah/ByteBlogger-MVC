@@ -43,14 +43,12 @@ button:hover {
   padding: 0;
 }
 
-/* Colors */
 :root {
   --primary-color: #c8ffa8;
   --secondary-color: #c8ffa8;
   --text-color: #5a5a5a;
 }
 
-/* Form Elements */
 textarea,
 input {
   padding: 1rem;
@@ -79,7 +77,6 @@ form label {
   margin-bottom: 0.5rem;
 }
 
-/* Layout */
 .wrapper {
   width: 100%;
   min-height: 100vh;
@@ -107,7 +104,6 @@ main {
   padding: 3% 4%;
 }
 
-/* Buttons */
 .btn-no-style {
   background: none;
   border: none;
@@ -190,7 +186,5 @@ body {
   padding: 0 1rem;
   background-color: #bbfffa;
   max-width: 1200px;
-  /* change the value to your desired maximum width */
   margin: 0 auto;
-  /* add this to center the container horizontally */
 }
