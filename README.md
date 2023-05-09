@@ -31,13 +31,9 @@ Overall, I am excited about the potential this blog site has to help developers 
 | :-----------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | `Noah Hoang`  | [![Socials](https://skillicons.dev/icons?i=git)](https://github.com/codenamenoah) [![Socials](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/codenamenoah/) [![Socials](https://skillicons.dev/icons?i=twitter)](https://twitter.com/CodeNameNoahH) |
 
-## Take A Look At Our Application In Action! [CLICK PREVIEW TO WATCH VIDEO!]
+## Take A Look At My Application!
 
-- E-Commerce-Back-End-ORMs Tutorial - [Back-End-ORMs](https://www.youtube.com/watch?v=QRh_KFoSkSg)
-
-- [![Watch the video](https://img.youtube.com/vi/QRh_KFoSkSg/maxresdefault.jpg)](https://youtu.be/QRh_KFoSkSg)
-
-- ![Demo of Insomnia Test for Products](https://user-images.githubusercontent.com/127361736/236393142-d55508b4-205b-40d2-8df4-8f0dfe11227c.gif)
+![ByteBlogger HomePage](https://user-images.githubusercontent.com/127361736/237017862-f6ab0e37-da0d-4403-a6a9-a77f946c276d.png)
 
 ---
 
@@ -73,25 +69,17 @@ Now you may be wondering as a business owner why you would want to own or utiliz
 
 - Cost-effective: My CMS is cost-effective as it eliminates the need for a technical team to manage website content. Business owners can easily manage website content themselves, which reduces the cost of maintaining a website.
 
-- Scalability: My CMS is scalable, which means that it can accommodate businesses of different sizes and stages of growth. As businesses grow and require more functionality, the CMS can be scaled up to meet their needs.\*
+- Scalability: My CMS is scalable, which means that it can accommodate businesses of different sizes and stages of growth. As businesses grow and require more functionality, the CMS can be scaled up to meet their needs.
 
-To use Insomnia, follow these simple tips:
+To use ByteBlogger, follow these simple steps:
 
-1. First, open Insomnia and create a new request. To do this, click on the New Request button located in the top-left corner of the screen.
+1. Upon entering the website, click on Login within the upper right corner
 
-2. Next, choose the HTTP method you want to use. You can choose from SEND, GET, POST, PUT, and DELETE. Click on the method you want to use, and the appropriate fields will appear in the request.
+2. If you are a new user, create an account.
 
-3. Enter the URL of the endpoint you want to access. This is the address where the API is located. The URL will depend on the specific API you are using, so make sure you have the correct URL.
+3. If you are a returning user, you should be logged in. If you are not logged in still, enter in your same login credentials.
 
-4. If you are using GET or DELETE, you can add any query parameters in the query parameters section. This is where you can add additional information that will help you filter or sort the data you are retrieving.
-
-5. If you are using POST or PUT, you can add the data you want to send in the request body section. This is where you can add new data or update existing data in the API.
-
-6. Once you have entered all the necessary information, click on the Send button. Insomnia will send the request to the API, and you will receive a response in the Response section of the screen.
-
-7. If the request is successful, you will see the response data in the Response Body section. If there are any errors, you will see them in the Response section as well.
-
-8. If you want to save the request for future use, click on the Save button located in the top-left corner of the screen. You can then access the saved request from the sidebar on the left side of the screen.
+4. Now that you are authenticated, you can create a post by clicking on the user-friendly interface buttons.
 
 Note: Make sure you have a MySQL server running on your computer with the appropriate database schema and data tables for the application to function correctly.
 
@@ -134,7 +122,17 @@ document.querySelector('.comment-form').addEventListener('submit', commentFormHa
 
 - This is where the magic happens, it was quite fun working out the hiccups I must admit.
 
-This code establishes relationships between four models (Product, Category, Tag, and ProductTag) in a database-driven application using the Sequelize ORM library. It defines associations such as "Product belongs to Category", "Category has many Products", "Product belongs to many Tags", and "Tag belongs to many Products". These associations enable the application to retrieve related data from multiple tables in the database. Finally, the code exports the four models for use in other parts of the application.
+This is an asynchronous JavaScript function commentFormHandler that is used to handle the submission of a comment form. The function is triggered when a user submits a form with the class comment-form.
+
+First, the function prevents the default form submission behavior using event.preventDefault(). Then it extracts the text entered by the user from the textarea element with the name "comment-body" and trims any leading or trailing whitespace from the text.
+
+It also extracts the post ID from the current window location URL by splitting the URL by '/' and taking the last element in the resulting array.
+
+If the comment text is not empty, the function sends a POST request to the server's API endpoint /api/comments using the fetch method. The body of the request is a JSON object that includes the post ID and the comment text. The Content-Type header is set to application/json.
+
+If the response is successful (i.e., the server returns a 2xx status code), the browser reloads the current page to display the new comment. Otherwise, an error message is displayed using alert(response.statusText).
+
+Finally, the function is registered as an event listener for the form's submit event using addEventListener.
 
 ---
 
@@ -163,6 +161,10 @@ This code establishes relationships between four models (Product, Category, Tag,
 - Documentation on Express
 
   - https://expressjs.com/
+
+- Documentation on Kitefin from JAWSDB
+
+  - https://www.jawsdb.com/ 
 
 ## License
 
