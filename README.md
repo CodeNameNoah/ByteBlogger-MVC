@@ -33,7 +33,9 @@ Overall, I am excited about the potential this blog site has to help developers 
 
 ## Take A Look At My Application!
 
-![ByteBlogger HomePage](https://user-images.githubusercontent.com/127361736/237017862-f6ab0e37-da0d-4403-a6a9-a77f946c276d.png)
+Deployed Application Link [ByteBlogger](https://byteblogger.herokuapp.com/)
+
+![ByteBlogger](https://user-images.githubusercontent.com/127361736/237054631-0e9598b9-955a-4c68-82f2-d2015a29eafb.gif)
 
 ---
 
@@ -59,17 +61,17 @@ Overall, I am excited about the potential this blog site has to help developers 
 
 ## Usage
 
-Now you may be wondering as a business owner why you would want to own or utilize a CMS, well here are some pointers:
+Now you may be wondering why you would want to use my application or even its core practicalities:
 
-- Easy to use: My CMS is user-friendly and easy to use, which makes it accessible to business owners who are not tech-savvy. Business owners can quickly update their website content without the need for technical expertise.
+- My application provides quality content about the latest trends in technology, gadget and software reviews, and tips and tricks for using different technologies. By offering informative and engaging content, I establish myself as an authority in the tech space, attracting a loyal following.
 
-- Saves time: My CMS allows business owners to quickly add or update website content, which saves time and effort. Business owners can manage their website content themselves instead of relying on a web developer or technical team.
+- Additionally, my tech blog application fosters community engagement, enabling readers to discuss and share ideas with others who have similar interests. This sense of community can build a loyal audience that keeps coming back to my blog.
 
-- Customizable: My CMS is highly customizable and can be tailored to meet the specific needs of different businesses. This means that business owners can modify their website content and design to align with their branding and marketing goals.
+- Convenient access is another benefit of my application. By providing an online platform for my blog, users can access the content from anywhere, at any time. This is particularly appealing for people who are always on the go and want to stay up-to-date with the latest tech news and trends.
 
-- Cost-effective: My CMS is cost-effective as it eliminates the need for a technical team to manage website content. Business owners can easily manage website content themselves, which reduces the cost of maintaining a website.
+- I also offer customization features, allowing users to tailor their experience to their needs. For example, users can create a personalized dashboard that displays the topics they are most interested in or receive email notifications when new content is posted.
 
-- Scalability: My CMS is scalable, which means that it can accommodate businesses of different sizes and stages of growth. As businesses grow and require more functionality, the CMS can be scaled up to meet their needs.
+- Finally, my tech blog application is user-friendly and easy to navigate, providing a clean and intuitive interface. This ensures that users have a positive experience on my blog, which can encourage them to visit again in the future.
 
 To use ByteBlogger, follow these simple steps:
 
