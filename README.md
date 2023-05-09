@@ -1,16 +1,14 @@
 # ByteBlogger-MVC
 
-I am thrilled to share with you how I built a powerful back-end system that is designed to assist e-commerce websites in managing their data storage and collection. This project was developed using Node.js, Sequel, and Express frameworks, which allowed me to build a robust, scalable and efficient system.
+I am proud to say that I have built a CMS-style blog site that resembles WordPress, designed specifically for developers to publish their blog posts and interact with other developers’ posts through comments. The site is deployed using Heroku, making it easily accessible for users to engage with.
 
 ## Description
 
-With this system, e-commerce websites can easily store and manage data such as customer information, product inventory, and transaction history. The user-friendly interface and well-organized data structure make it easy for website owners to access and manage their data.
+Throughout the development process, I ensured that the application followed the Model-View-Controller (MVC) paradigm for its architectural structure. I chose Handlebars.js as the templating language, as it provides a simple and intuitive syntax for generating HTML pages. Additionally, Sequelize was utilized as the Object-Relational Mapping (ORM) to interact with the database, streamlining the process of managing data.
 
-The Node.js framework was perfect for building the back-end system as it provided me with the flexibility and scalability required for managing large data sets. I also utilized Sequel, a powerful SQL ORM, to interact with the database and perform complex queries, making the system efficient and reliable.
+One of the most critical features of this blog site is its ability to authenticate users. To accomplish this, I used the express-session npm package for authentication, which allows users to log in and securely access their profile pages, view their blog posts and comments, as well as interact with other developers' posts.
 
-Express was also an excellent tool for developing the system's APIs, allowing me to create a smooth and seamless experience for website owners. By using Express, I was able to create well-organized endpoints that made it easy for website owners to access their data quickly and efficiently.
-
-Overall, I am excited to share the success of this project and how it can greatly benefit e-commerce websites in managing their data storage and collection. The combination of Node.js, Sequel, and Express allowed me to build a powerful system that is both efficient and easy to use.
+Overall, I am excited about the potential this blog site has to help developers share their knowledge and insights with others in their field. I believe that it will foster a community of developers who can collaborate and learn from one another.
 
 ---
 
@@ -18,12 +16,14 @@ Overall, I am excited to share the success of this project and how it can greatl
 
 [![Socials](https://skillicons.dev/icons?i=js,git,mysql,nodejs,express)](https://skillicons.dev)
 
-| Featured Technology Used |              Link              |
-| :----------------------: | :----------------------------: |
-|        `Node.js`         | [LINK](https://nodejs.dev/en/) |
-|          `NPM`           | [LINK](https://www.npmjs.com/) |
-|         `Mysql`          | [LINK](https://www.mysql.com/) |
-|        `Express`         | [LINK](https://expressjs.com/) |
+| Featured Technology Used |                     Link                     |
+| :----------------------: | :------------------------------------------: |
+|        `Node.js`         |        [LINK](https://nodejs.dev/en/)        |
+|          `NPM`           |        [LINK](https://www.npmjs.com/)        |
+|         `Mysql`          |        [LINK](https://www.mysql.com/)        |
+|        `Express`         |        [LINK](https://expressjs.com/)        |
+|         `Heroku`         |    [LINK](https://devcenter.heroku.com/)     |
+|         `dotenv`         | [LINK](https://www.npmjs.com/package/dotenv) |
 
 ---
 
@@ -47,7 +47,7 @@ Overall, I am excited to share the success of this project and how it can greatl
 
 1. Click on the green code button and copy the link for the SSH key.
 2. Once clip-boarded load up a command line interface and change directory to one of your preference
-3. Enter in the command `git clone git@github.com:CodeNameNoah/E-Commerce-Back-End-ORMs.git`
+3. Enter in the command `git@github.com:CodeNameNoah/ByteBlogger-MVC.git`
 4. Enter your protected SSH password
 5. Enjoy!
 
@@ -100,35 +100,35 @@ Note: Make sure you have a MySQL server running on your computer with the approp
 ## Featured Code Snippet
 
 ```
-// import models
-const Product = require("./Product");
-const Category = require("./Category");
-const Tag = require("./Tag");
-const ProductTag = require("./ProductTag");
+async function commentFormHandler(event) {
+  event.preventDefault();
 
-// Products belongsTo Category
-Product.belongsTo(Category, {
-  foreignKey: "category_id",
-});
-// Categories have many Products
-Category.hasMany(Product, {
-  foreignKey: "category_id",
-});
-// Products belongToMany Tags (through ProductTag)
-Product.belongsToMany(Tag, {
-  through: ProductTag,
-});
-// Tags belongToMany Products (through ProductTag)
-Tag.belongsToMany(Product, {
-  through: ProductTag,
-});
-module.exports = {
-  Product,
-  Category,
-  Tag,
-  ProductTag,
-};
+  const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
+  const post_id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
 
+  if (comment_text) {
+    const response = await fetch('/api/comments', {
+      method: 'POST',
+      body: JSON.stringify({
+        post_id,
+        comment_text
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert(response.statusText);
+    }
+  }
+}
+
+document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
 
 ```
 
