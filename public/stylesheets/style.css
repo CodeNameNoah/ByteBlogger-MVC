@@ -32,10 +32,12 @@ button {
   transition: background-color .2s;
   cursor: pointer;
   border-radius: 25px;
+  font-family: 'Darumadrop One', cursive;
 }
 
 button:hover {
   background-color: #c0392b;
+  font-family: 'Darumadrop One', cursive;
 }
 
 .post-list {
@@ -44,8 +46,8 @@ button:hover {
 }
 
 :root {
-  --primary-color: #c8ffa8;
-  --secondary-color: #c8ffa8;
+  --primary-color: #9ca597;
+  --secondary-color: #9ca597;
   --text-color: #5a5a5a;
 }
 
@@ -110,11 +112,12 @@ main {
   padding: 0.5rem;
   cursor: pointer;
   text-decoration: none;
-  color: var(--primary-color);
+  color: #2c3e50;
   font-size: 1rem;
   font-weight: bold;
   transition: color 0.2s;
   margin-left: 1rem;
+  font-family: 'Darumadrop One', cursive;
 }
 
 .btn-no-style:hover {
@@ -137,6 +140,7 @@ main {
   line-height: 150%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   background-color: #af7b6fd6;
+  padding: 11px;
 }
 
 .comment {
@@ -155,11 +159,13 @@ footer {
 
 body {
   font-family: 'Darumadrop One', cursive;
+  background: linear-gradient(to bottom, #f2f2f2, #ffffff);
+  background-image: url('./forest\ background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-body {
-  background: linear-gradient(to bottom, #f2f2f2, #ffffff);
-}
 
 .btn-no-style:hover {
   background: none;

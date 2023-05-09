@@ -1,16 +1,17 @@
-const commentFormHandler = async (event) => {
+async function commentFormHandler(event) {
   event.preventDefault();
 
-  const commentTextArea = document.querySelector('textarea[name="comment-body"]');
-  const commentText = commentTextArea.value.trim();
-  const postId = window.location.toString().split('/').pop();
+  const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
+  const post_id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
 
-  if (commentText) {
+  if (comment_text) {
     const response = await fetch('/api/comments', {
       method: 'POST',
       body: JSON.stringify({
-        post_id: postId,
-        comment_text: commentText
+        post_id,
+        comment_text
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -18,12 +19,11 @@ const commentFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      location.reload();
+      document.location.reload();
     } else {
       alert(response.statusText);
     }
   }
-};
+}
 
-const commentForm = document.querySelector('.comment-form');
-commentForm.addEventListener('submit', commentFormHandler);
+document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
